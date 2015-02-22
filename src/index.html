@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://firewalkwithme.webflow.com/ -->
 <html data-wf-site="54d9fa47c038101c30559527" data-wf-page="54d9fa47c038101c30559529" data-wf-status="1" class="w-mod-js w-mod-no-touch w-mod-video w-mod-no-ios wf-opensans-i3-active wf-opensans-n4-active wf-opensans-i4-active wf-opensans-n6-active wf-opensans-i6-active wf-opensans-n7-active wf-opensans-i7-active wf-opensans-n8-active wf-opensans-i8-active wf-montserrat-n4-active wf-montserrat-n7-active wf-bitter-n4-active wf-bitter-n7-active wf-bitter-i4-active wf-opensans-n3-active wf-active">
 <script id="tinyhippos-injected">
 if (window.top.ripple) {
@@ -14,8 +13,9 @@ if (window.top.ripple) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Webflow">
     <link rel="stylesheet" type="text/css" href="./index_files/firewalkwithme.webflow.4e39e3c00.css">
+    <link rel="stylesheet" type="text/css" href="./index_files/modal.css">
+
     <script src="./index_files/webfont.js"></script>
-    <style type="text/css"></style>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CBitter:400,700,400italic%7COpen+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
     <script>
     WebFont.load({
@@ -25,11 +25,9 @@ if (window.top.ripple) {
     });
     </script>
     <script type="text/javascript" src="./index_files/modernizr-2.7.1.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/530e4313f4a216ca3c000048/53aa5920039f2a9529e8a9bb_webclip-slate.png">
-    <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/530e4313f4a216ca3c000048/53aa5920039f2a9529e8a9bb_webclip-slate.png">
-   
-    
-</head>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+ </head>
 
 <body>
     <header class="navbar" id="brandname">
@@ -64,7 +62,8 @@ if (window.top.ripple) {
                 <div class="w-col w-col-7 call-to-action">
                     <h1 class="hero-header">Продажа огнетушителей в Санкт-Петербурге</h1>
                     <p class="hero-subtitle">Официальное представительство ООО “Ярпожинвест” – крупнейшего производителя противопожарного оборудования
-                        <br>в России</p><a class="button" href="http://firewalkwithme.webflow.com/#">Заказать обратный звонок</a>
+                    <br>в России</p>
+                    <a class="button" href="http://firewalkwithme.webflow.com/#">Заказать обратный звонок</a>
                 </div>
             </div>
         </div>
@@ -280,10 +279,51 @@ if (window.top.ripple) {
     </div>
     <div class="section grey footer">
         <div class="w-container finalcall">
-            <h2>Остались вопросы? Отправьте заявку, поможем!</h2><a class="button" href="http://firewalkwithme.webflow.com/#">Заказать обратный звонок</a>
+            <h2>Остались вопросы? Отправьте заявку, поможем!</h2>
+            <a class="button" href="http://firewalkwithme.webflow.com/#">Заказать обратный звонок</a>
         </div>
         <!-- <div class="designby">Design by Elena Fedorova&nbsp;&nbsp;&nbsp;</div> -->
     </div>
+
+    <!-- popups -->
+    <div  id="popup-form" class="md-show popup-form md-modal md-effect-13">
+      <form  name="form" class="md-content" data-validate="parsley">
+        <h2>Форма заявки</h2>
+        <input type="text" placeholder="Как вас зовут" name="name" required="required"></input>
+        <input type="text" placeholder="Ваш телефон" name="phone" required="required"></input>
+        <input type="text" placeholder="Ваш e-mail" name="email" required="required"></input>
+        <select type="text" placeholder="Модель огнетушителя" name="model" required="required">
+          <option value="OP-2 ">ОП-2 (з) автомобильный</option>
+          <option value="OU-2">ОУ-2 автомобильный</option>
+          <option value="OU-3">ОУ-3 офисы, музеи, лаборатории</option>
+          <option value="OP-4">ОП-4 (з) офисы, магазины</option>
+          <option value="OP-5">ОП-5 (з) офисы, магазины</option>
+          <option value="OU-5">ОУ-5 помещения с электрооборудованием</option>
+
+        </select>
+
+        <div class="form-control clearfix">
+          <button type="submit" class="button submit-button">Отправить</button>
+          <button id="close-button" class="button close-button" type="reset">Закрыть</button>
+        </div>
+        <div class="disclaimer"><img src="images/lock_icon.png"/> Мы гарантируем, что ваши данные не будут переданы третим лицам или использоваться в спам-рассылках</div>
+      </form>
+    </div>
+
+    <div class="form-closure md-modal form-done md-effect-13">
+      <div class="md-content">
+        Ваша заявка принята! Наши менеджеры свяжутся с вами в ближайшее время
+        <button class="close-button">Закрыть</button>
+      </div>
+    </div>
+
+    <div class="form-closure md-modal form-fail md-effect-13">
+      <div class="md-content">
+        <p>Извините, что-то пошло не так во время отправки формы :(</p>
+        <button class="close-button">Закрыть</button>
+      </div>
+    </div>
+    <div class="md-overlay"></div>
     <script type="text/javascript" src="./index_files/jquery.min.js"></script>
     <script type="text/javascript" src="./index_files/webflow.b67a707b9.js"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
