@@ -18,10 +18,13 @@ input.img-button {
 	height: auto;
 	border: none;
 	box-shadow: none;
-	left: -3em;
-	position: relative;
+	right: -3em;
+	position: absolute;
+	outline: none;
 }
-
+.img-document {
+	height: 95vh;
+}
 .md-overlay {
 	position: fixed;
 	width: 100%;
